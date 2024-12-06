@@ -9,6 +9,36 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!--Navbar with bootstrap, when changing window size movment is stuttery-->
+    <header>
+        <nav class="navbar navbar-expand-sm">
+            <div class="container">
+                <a class="logo" href="index.html">
+                    <img src="Images/Icon.svg" alt="Image of Logo" height="48px" > <!--Remove height with CSS eventually-->
+                </a>
+
+                <!--Trying this navbar toggler with bootstrap, seems to work for now. Still need to understand ARIA attributes--> 
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar_data">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbar_data">
+                    <ul class="navbar-nav m-auto">
+                        <!--Make sure active is right on each page-->
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="GettingStarted.html">Getting Started</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="CommonQuestions.html">Questions?</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
