@@ -5,68 +5,135 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/Images/Favicon.svg">
     <title>Frequently Asked Questions</title>
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!--Navbar with bootstrap, when changing window size movment is stuttery-->
-    <header>
-        <nav class="navbar navbar-expand-sm">
-            <div class="container">
-                <a class="logo" href="index.html">
-                    <img src="Images/Icon.svg" alt="Image of Logo" height="48px" > <!--Remove height with CSS eventually-->
-                </a>
+    <!--Navbar with bootstrap, when changing window size movment is stuttery, try to fix-->
+    <nav class="navbar sticky-top navbar-expand-sm" id="navbar">
+        <div class="container">
+            <a class="logo" href="index.html">
+                <img src="Images/Icon.svg" alt="Image of Logo"> <!--Remove height with CSS eventually-->
+            </a>
 
-                <!--Trying this navbar toggler with bootstrap, seems to work for now. Still need to understand ARIA attributes--> 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar_data">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            <!--Trying this navbar toggler with bootstrap, seems to work for now. Still need to understand ARIA attributes for accesibility, need to read more on them--> 
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar_data">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                <div class="collapse navbar-collapse" id="navbar_data">
-                    <ul class="navbar-nav m-auto">
-                        <!--Make sure active is right on each page-->
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="GettingStarted.html">Getting Started</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="FAQ.html">Questions?</a>
-                        </li>
-                    </ul>
-                </div>
+             <!--Think we can use same ID on different html pages?-->
+            <div class="collapse navbar-collapse" id="navbar_data">
+                <ul class="navbar-nav m-auto">
+                    <!--Make sure active is right on each page-->
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="GettingStarted.html">Getting Started</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="FAQ.html">Questions?</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
-    </header>  
+        </div>
+    </nav>
+
     
     <section class="header_text">
-        <article>
-            <h1 class="heading_title">Have some questions?</h1>
-            <h3 class="heading_subtext">I have some answers.</h3>
-        </article>
+            <h2 class="heading_title">Have some questions?</h2>
+            <h4 class="heading_subtext">I have some answers.</h4>
     </section>
 
-    <section>
-        <!--Might find a cleaner way to do this-->
-        <article class="faq_content">
-            <p class="question_1">What are some things I can do with a computer?</p>
-            <p class="answer_1">Truthfully, the options are unlimited. The most common use cases are productivity(work,email,communication) or gaming. You can do these on other devices as well but a computer can serve as a total package.</p>
-            <p class="question_2">I'm interested in purchasing a computer or laptop, where should I start?</p>
-            <p class="answer_2">The best way to start is by understanding the type of computer you need and how you plan on using it. For work, for basic browsing, for gaming? For basic browsing you won't need something with too much power but for gaming that can be the opposite story. After that figure out a budget amount you are comfortable spending. </p>
-            <p class="question_3">What is an operating system?</p>
-            <p class="answer_3">An operating system (OS) is the main software program that runs on a computer. It manages and controls the computer's hardware and software resources and also acts as a bridge between the user and the computer, enabling tasks like opening files, accessing the internet, running software, and organizing data.</p>
-            <p class="question_4">I want to build my own computer, is there a place to help me find compatible parts?</p>
-            <p class="answer_4">A site I can recommend if looking to build your own computer is PCPartPicker. This site will show you what parts are compatible with each other as well as price breakdowns and availability. They even show you a few computers already parted out for specific use cases.  </p>
-            <p class="question_5">Why were computer cases not mentioned on the Getting Started page?</p>
-            <p class="answer_5">I wanted to keep it broad as possible. More people are familiar with laptops, so I wanted the information to be applicable to both. It is easier to visualize the desktop parts rather than a laptops due to a laptops form factor. </p>
-            <p class="question_6">How do I keep my computer clean?</p>
-            <p class="answer_6">Firstly, keep your space clean. Less dust build up in your space is less in your computer. Unplug your device and turn it off completely. Desktop computers tend to be easier to take apart for cleaning so it’s a good habit to clean inside regularly. Open the case of your desktop’s tower, use a can of compressed air to spray inside until all of the dust is gone. Some desktop cases also have dust filters, making the cleaning process easier. Most laptops aren’t meant to be opened by their users, which makes cleaning inside challenging. Power down the device and if you can remove the battery and bottom shell before cleaning with compressed air. If you can't open your laptop, take a microfiber cloth and wipe the exhaust vents to keep them free of dust regularly.</p>
-        </article>
-        <article class=faq_image>
-            <p><img src="/Images/Questions_Image.png"></p>
-        </article>
+    <section class="faq_section">
+        <!--Trying accordions since this is the look I wanted. Another area that could use ARIA attributes, messy but works. Try to change show color in CSS-->
+        <div class="accordion" id="faq_accordion">
+            <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question_one">
+                        What are some things I can do with a computer?
+                    </button>
+                  </h2>
+                <div id="question_one" class="accordion-collapse collapse" data-bs-parent="#faq_accordion">
+                    <div class="accordion-body">
+                        Truthfully, the options are unlimited. The most common use cases are productivity(work,email,communication) or gaming. You can do these on other devices as well but a computer can serve as a total package.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question_two">
+                        I'm interested in purchasing a computer or laptop, where should I start?
+                    </button>
+                  </h2>
+                  <div id="question_two" class="accordion-collapse collapse" data-bs-parent="#faq_accordion">
+                    <div class="accordion-body">
+                        The best way to start is by understanding the type of computer you need and how you plan on using it. For work, for basic browsing, for gaming? For basic browsing you won't need something with too much power but for gaming that can be the opposite story. After that figure out a budget amount you are comfortable spending.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question_three">
+                        What is an operating system?
+                    </button>
+                  </h2>
+                  <div id="question_three" class="accordion-collapse collapse" data-bs-parent="#faq_accordion">
+                    <div class="accordion-body">
+                        An operating system (OS) is the main software program that runs on a computer. It manages and controls the computer's hardware and software resources and also acts as a bridge between the user and the computer, enabling tasks like opening files, accessing the internet, running software, and organizing data.
+                    </div>
+                  </div>
+                </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question_four">
+                    I want to build my own computer, is there a place to help me find compatible parts?
+                  </button>
+                </h2>
+                <div id="question_four" class="accordion-collapse collapse" data-bs-parent="#faq_accordion">
+                  <div class="accordion-body">
+                    A site I can recommend if looking to build your own computer is PCPartPicker. This site will show you what parts are compatible with each other as well as price breakdowns and availability. They even show you a few computers already parted out for specific use cases.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question_five">
+                    Why were computer cases not mentioned on the Getting Started page?
+                  </button>
+                </h2>
+                <div id="question_five" class="accordion-collapse collapse" data-bs-parent="#faq_accordion">
+                  <div class="accordion-body">
+                    I wanted to keep it broad as possible. More people are familiar with laptops, so I wanted the information to be applicable to both. It is easier to visualize the desktop parts rather than a laptops due to a laptops form factor.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question_six">
+                    How do I keep my computer clean?
+                  </button>
+                </h2>
+                <div id="question_six" class="accordion-collapse collapse" data-bs-parent="#faq_accordion">
+                  <div class="accordion-body">
+                    Firstly, keep your space clean. Less dust build up in your space is less in your computer. Unplug your device and turn it off completely. Desktop computers tend to be easier to take apart for cleaning so it’s a good habit to clean inside regularly. Open the case of your desktop’s tower, use a can of compressed air to spray inside until all of the dust is gone. Some desktop cases also have dust filters, making the cleaning process easier. Most laptops aren’t meant to be opened by their users, which makes cleaning inside challenging. Power down the device and if you can remove the battery and bottom shell before cleaning with compressed air. If you can't open your laptop, take a microfiber cloth and wipe the exhaust vents to keep them free of dust regularly.
+                  </div>
+                </div>
+              </div>
+        </div>
+
+        <div class=faq_image>
+          <p><img src="/Images/Questions_Image.png" alt="Image of computer monitor with question mark on screen."></p>
+        </div>
+
     </section>
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

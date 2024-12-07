@@ -1,2 +1,35 @@
-body{}
+body{
+    background-color: black;
+    color: aliceblue;
+}
 
+#navbar{
+    background: red;
+    padding: 10px;
+}
+#navbar img{
+    height: 48px;
+}
+#navbar a{
+    color: aliceblue;
+}
+
+.header_text{
+    text-align: center;
+}
+
+.homepage_content{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.home_left{
+    width: 500px;
+}
+
+.homepage_content img{
+    background-color: black;
+    height: 600px;
+    width: 700px;
+}

@@ -5,62 +5,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/Images/Favicon.svg">
     <title>Getting Started</title>
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!--Navbar with bootstrap, when changing window size movment is stuttery-->
-    <header>
-        <nav class="navbar navbar-expand-sm">
-            <div class="container">
-                <a class="logo" href="index.html">
-                    <img src="Images/Icon.svg" alt="Image of Logo" height="48px" > <!--Remove height with CSS eventually-->
-                </a>
+    <nav class="navbar sticky-top navbar-expand-sm" id="navbar">
+        <div class="container">
+            <a class="logo" href="index.html">
+                <img src="Images/Icon.svg" alt="Image of Logo"> <!--Remove height with CSS eventually-->
+            </a>
 
-                <!--Trying this navbar toggler with bootstrap, seems to work for now. Still need to understand ARIA attributes--> 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar_data">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            <!--Trying this navbar toggler with bootstrap, seems to work for now. Still need to understand ARIA attributes--> 
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar_data">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                <div class="collapse navbar-collapse" id="navbar_data">
-                    <ul class="navbar-nav m-auto">
-                        <!--Make sure active is right on each page-->
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="GettingStarted.html">Getting Started</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="FAQ.html">Questions?</a>
-                        </li>
-                    </ul>
-                </div>
+            <!--Think we can use same ID on different html pages?-->
+            <div class="collapse navbar-collapse" id="navbar_data">
+                <ul class="navbar-nav m-auto">
+                    <!--Make sure active is right on each page-->
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="GettingStarted.html">Getting Started</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="FAQ.html">Questions?</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
-    </header>  
-    
+        </div>
+    </nav>
+
     <section class="header_text">
-        <article>
-            <h1 class="heading_title">Lets discuss the basics!</h1>
-            <p class="heading_subtext">Don't worry, I brought pictures.</p>
-        </article>
+        <h2 class="heading_title">Lets discuss the basics!</h2>
+        <h4 class="heading_subtext">Don't worry, I brought pictures.</h4>
     </section>
 
-    <!--Need CSS for grid style, may try bootstrap for this, probably easier and cleaner-->
-    <section class="grid">
-        <h2>Computer Hardware Basics</h2>
-        <div class="row1">
-            <p><img src="/Images/Processor.jpg" alt="A computer processor">The Central Processing Unit<strong> (CPU)</strong> is the brain of the computer. It is responsible for all the instructions and commands that need to be executed to complete a task. Two well-known CPU manufacturers are Intel and AMD.</p>
-            <p><img src="/Images/Graphics_Card.jpg" alt="A computer graphics card">A Graphics Processing Unit <strong>(GPU)</strong>, also known as a Video Card or Graphics Card, is responsible for handling intensive graphics rendering such as those found in video games. It  impacts the quality and performance when processing the video signal that is projected onto the monitor. Two well-known GPU manufacturers are Nvidia and AMD. Some CPU's include a GPU on the chip. </p>
-            <p><img src="/Images/Memory.jpg" alt="Memory/Ram for a computer">RAM gives applications a place to store and access data on a short-term basis. It stores the information your computer is actively using so that it can be accessed. RAM also affects the overall performance of a system especially when multitasking.</p>
-            <p><img src="/Images/Motherboard.jpg" alt="A computer motherboard">The motherboard is the means for all the hardware to communicate, the CPU, Memory, and GPU as well as storage all connect here. Motherboards have different form factors or sizes. The standard size is called ATX.</p>
-        </div>
-        <div class="row2">
-             <p><img src="/Images/Cooling.jpg" alt="Processor fan and case fan for computer">Heat kills hardware, so you'll want to keep your system cool under pressure. CPU cooler’s sole purpose is to dissipate the heat generated by the CPU or processor. There are two types of CPU Coolers: Air Cooling and Liquid Cooling. Fan's provide make sure your machines stays cool by bringing in outside air and exhausting hot air.  </p>
-            <p><img src="/Images/Storage.jpg" alt="Various storage devices for computers">This is where all of your data is stored. Storage comes in a few form factors but the most common are Hard Disk Drives (HDD) and Solid State Drives (SSD). It's different from RAM as these devices focus more are for long term storage of data.</p>
-            <p><img src="/Images/Power_Supply.jpg" alt="Computer power supply">As you can guess, this is what makes everything run. A power supply coverts wall power in a source that your machine can run on. For desktops, most power supplies are placed in the system. For laptops to focus on slimness a battery is often used in the machine and powered by an external power supply. </p>
-            <p><img src="/Images/Peripherals.jpg" alt="Image of keyboard,mouse and monitor">These are the extras, if you're working or gaming from a desktop. You may need items like a monitor, mouse, keyboard, speakers, desk. If you're on a laptop you may just need a mouse for example. These can be another way to give some personality to your setup or make it more comfortable for use.</p>
+    <!--Bootstrap grid, I like the look but needs spacing and color change, photos don't stretch to edges-->
+    <section id="grid">
+        <div class="container text-center">
+            <div class="row row-cols-4">
+                <div class="card">
+                    <img src="/Images/Processor.jpg" class="card-img-top" alt="A computer processor">
+                    <div class="card-body">
+                        <h5 class="card-title">CPU</h5>
+                        <p class="card-text"> The Central Processing Unit <strong>(CPU)</strong> is the brain of the computer. It is responsible for all the instructions and commands that need to be executed to complete a task. Two well-known CPU manufacturers are Intel and AMD.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="/Images/Graphics_Card.jpg" class="card-img-top" alt="A computer graphics card">
+                    <div class="card-body">
+                        <h5 class="card-title">GPU</h5>
+                        <p class="card-text">A Graphics Processing Unit <strong>(GPU)</strong>, also known as a Video Card or Graphics Card, is responsible for handling intensive graphics rendering such as those found in games. Two well-known GPU manufacturers are Nvidia and AMD. Some CPU's include a GPU on the chip.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="/Images/Memory.jpg" class="card-img-top" alt="Memory/Ram for a computer">
+                    <div class="card-body">
+                        <h5 class="card-title">Memory/Ram</h5>
+                        <p class="card-text">RAM gives applications a place to store and access data on a short-term basis. It stores the information your computer is actively using so that it can be accessed. RAM also affects the overall performance of a system especially when multitasking.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="/Images/Motherboard.jpg" class="card-img-top" alt="A computer motherboard">
+                    <div class="card-body">
+                        <h5 class="card-title">Motherboard</h5>
+                        <p class="card-text">The motherboard is the means for all the hardware to communicate, the CPU, Memory, and GPU as well as storage all connect here. Motherboards have different form factors or sizes. The standard size is called ATX.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="/Images/Cooling.jpg" class="card-img-top" alt="Processor fan and case fan for computer">
+                    <div class="card-body">
+                        <h5 class="card-title">Cooling</h5>
+                        <p class="card-text">Heat kills hardware, so you'll want to keep your system cool under pressure. CPU cooler’s sole purpose is to dissipate the heat generated by the CPU or processor. There are two types of CPU Coolers: Air Cooling and Liquid Cooling. Fan's provide make sure your machines stays cool by bringing in outside air and exhausting hot air.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="/Images/Storage.jpg" class="card-img-top" alt="Various storage devices for computers">
+                    <div class="card-body">
+                        <h5 class="card-title">Storage</h5>
+                        <p class="card-text">This is where all of your data is stored. Storage comes in a few form factors but the most common are Hard Disk Drives (HDD) and Solid State Drives (SSD). It's different from RAM as these devices focus more are for long term storage of data.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="/Images/Power_Supply.jpg" class="card-img-top" alt="Computer power supply">
+                    <div class="card-body">
+                        <h5 class="card-title">Power Supply</h5>
+                        <p class="card-text">As you can guess, this is what makes everything run. A power supply coverts wall power in a source that your machine can run on. For desktops, most power supplies are placed in the system. For laptops to focus on slimness a battery is often used in the machine and powered by an external power supply.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="/Images/Peripherals.jpg" class="card-img-top" alt="Image of keyboard,mouse and monitor">
+                    <div class="card-body">
+                        <h5 class="card-title">Gaming Peripherals</h5>
+                        <p class="card-text">These are the extras, if you're working or gaming from a desktop. You may need items like a monitor, mouse, keyboard, speakers, desk. If you're on a laptop you may just need a mouse for example. These can be another way to give some personality to your setup or make it more comfortable for use.</p>
+                    </div>   
+                </div> 
+            </div>    
         </div>
     </section>
 
