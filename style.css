@@ -1,27 +1,38 @@
 body{
-    background-color: #282828;
-    color: #131315;
-    margin: auto;
+    background-color: #191918;
+    background: linear-gradient(180deg, #1a1a1a, #1d1d1d);
     font-family: 'Space Grotesk',sans-serif;
+    margin: auto;
+    min-height: 100vh;
 }
 
-
+/* Navbar Section */
 #navbar{
     background: #141515;
+    border-bottom: solid 1.5px #36363651;
     padding: 10px;
-    border-bottom: solid 2px #36363651;
-}
-#navbar img{
-    height: 48px;
-}
-#navbar a{
-    text-align: center;
-    text-wrap: nowrap;
-    color: #E9E2DA;
-    font-size: 16px;
-    text-shadow: 3px 1px 3px #1c1a1a80;
 }
 
+#navbar .container{
+    max-width: 75%;
+}
+
+#navbar img{
+    height: 48px;
+
+}
+#navbar a{
+    text-wrap: nowrap;
+    color: #E9E2DA;
+    font-size: 15px;
+    text-shadow: 1px 1px 1px #1c1a1a80;
+}
+
+#navbar a.active{
+    color: #05F140;
+    font-size: 17px;
+
+}
 
 
 .navbar-nav li{
@@ -29,34 +40,25 @@ body{
     padding-right:15px;
   }
 
-#navbar a.active{
-    color: #05F140;
-    text-decoration: underline;
-}
-
-#navbar .container{
-    width:auto;
-}
-
+/* Header Section */
 .header_text{
     background-color: #141515;;
-    text-align: center;
-    text-wrap: nowrap;
     height: 200px;
     padding: 60px;
-
+    text-align: center;
+    text-wrap: nowrap;
 }
 
 .header_text h2{
     color: #E9E2DA;
-    font-size: 2.5em;
-    text-shadow: 3px 1px 3px #1c1a1a80;
+    font-size: 2.6em;
+    text-shadow: 3px 1px 3px #11111180;
 }
 
 .header_text h5{
-    color: #E9E2DA;
+    color: #b7b0a8;
     font-size: 1.1em;
-    text-shadow: 3px 1px 3px #1c1a1a80;
+    text-shadow: 1px 1px 1px #1c1a1a80;
 }
 
 .h_color{
@@ -64,53 +66,55 @@ body{
     
 }
 
+/* 1st Page */
 .homepage_content{
     display: flex;
     justify-content: center;
-    text-align: center;
+    margin: 50px;
 }
 
 .home_left{
-    width: 600px;
-    margin: auto 0;
-    top: 50%;
-    left: 50%;
-    border-radius: 5px;
-    background: #4d4e4d;
+    padding: 30px;
+    min-height: 400px;
+    min-width: 500px;
+    max-width: 700px;
     color: #E9E2DA;
-    padding: 20px;
-    height: 500px; 
-    text-shadow: 3px 1px 3px #1c1a1a80;
+    text-shadow: 1px 1px 1px #1c1a1a80;
 }
 
 .home_left h3{
-    font-size: 50px;
+    display:inline-block;
+    font-size: 57px;
 }
 
 .home_left p{
+    margin-top: 30px;
+    display:inline-block;
     font-size: 30px;
+    line-height: 1.5em;
 }
 
 .home_left .link{
-    font-size: 25px;
-    text-decoration: none;
+    font-size: 20px;
     background-color: #000000;
     color: #05F140;
-    text-shadow: 3px 1px 3px #1c1a1a80;
+    text-shadow: 1px 1px 1px #1c1a1a80;
+    text-decoration: none;
     padding: 10px;
     border: 5px solid black;
     border-radius: 5px;
 }
 
 .homepage_content img{
+    display:inline-block;
     height: 600px;
-    width: 700px;
+    width: auto;
 }
 
 
+/* 2nd Page */
 #grid{
-    width: 1440px;
-    margin: auto;
+    margin: auto 0;
     padding: 50px;
 }
 
@@ -118,61 +122,63 @@ body{
    width: 18em;
    height: 30em;
    padding: 0;
-   margin-bottom: 80px;
-   margin-right: 20px;
-   background: #131315;
+   background: #3e3e3e;
+   border: 5px solid #151515;
+   background: linear-gradient(180deg, #b3b1b13c, #121212);
    color: #E9E2DA;
+   margin-bottom: 50px;
+   margin-right: 30px;
 }
 
 .card h5{
     font-size: 1.6em;
-    font-weight: 500;
-    text-shadow: 3px 1px 3px #1c1a1a80;
+    font-weight: 600;
+    text-shadow: 1px 1px 1px #1c1a1a80;
 }
 
 .card p{
     font-size: 0.95em;
-    text-shadow: 3px 1px 3px #1c1a1a80;
+    text-shadow: 1px 1px 1px #1c1a1a80;
 }
 .card img{
     height: 180px;
 }
 
+hr{
+    border-top: 5px solid #9b9695;
+    border-radius: 5px;
+}
 
+/* 3rd Page */
 .faq_section{
     display: flex;
     justify-content: center;
-    text-align: center;
     padding: 70px;
 }
 
-.faq_section img{
-    height: 300px;
-}
-
 .accordion{
-    text-shadow: 3px 1px 3px #1c1a1a80;
     width: 50em;
+    text-shadow: 1px 1px 1px #1c1a1a80;
     font-size: 1.5em;
     line-height: 1.8em;
     text-align: left;
     --bs-accordion-btn-color: #e9e2da;
-    --bs-accordion-bg: #FFF;
     --bs-accordion-color: #e9e2da;
     --bs-accordion-bg: none;
-    --bs-accordion-border-color: #ffffff;
     --bs-accordion-btn-focus-box-shadow: #000;
-    --bs-accordion-active-color: #e9e2da;
-    --bs-accordion-active-bg: #aa16;
+    --bs-accordion-active-color: #05F140;
+    --bs-accordion-active-bg: none;
+    /* Took me forever to realize how to change this stupid icon color but I got it. Color had to be url encoded, icon copied from bootstrap site*/
+    --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23E9E2DA'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2305F140'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
 }
 
-hr{
-    border-top: 5px solid #05F140;
-    border-radius: 5px;
+.accordion button{
+    font-size: 0.8em;
 }
 
 
-
+/* Media Queries */
 @media screen and (max-width:) {
     
 }
@@ -184,3 +190,7 @@ hr{
 @media screen and (max-width:) {
     
 }
+
+
+
+
