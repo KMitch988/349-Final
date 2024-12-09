@@ -1,6 +1,6 @@
 body{
     background-color: #191918;
-    background: linear-gradient(0 deg, #1a1a1a, #1d1d1d);
+    background: linear-gradient(0, #1a1a1a, #1d1d1d);
     font-family: 'Space Grotesk',sans-serif;
     margin: auto;
     min-height: 100vh;
@@ -103,7 +103,7 @@ body{
     text-shadow: 1px 1px 1px #1c1a1a80;
     text-decoration: none;
     padding: 10px;
-    border: 5px solid black;
+    border: 5px solid #000000;
     border-radius: 5px;
 }
 
@@ -171,7 +171,6 @@ hr{
     --bs-accordion-btn-focus-box-shadow: #000;
     --bs-accordion-active-color: #05F140;
     --bs-accordion-active-bg: none;
-    /* Took me forever to realize how to change this stupid icon color but I got it. Color had to be url encoded, icon copied from bootstrap site*/
     --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23E9E2DA'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
     --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2305F140'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
 }
@@ -182,7 +181,7 @@ hr{
 
 
 /* Media Queries */
-@media screen and (max-width: 1400px) and (min-width 1201px) {
+@media screen and (max-width: 1400px) and (min-width: 1201px) {
 
     
     .card:nth-last-of-type(-n+2){
@@ -191,7 +190,7 @@ hr{
 
 }
 
-@media screen and (max-width: 1200px)  and (min-width 1054px) {
+@media screen and (max-width: 1200px)  and (min-width: 1054px) {
 
     
     .card:nth-last-of-type(-n+2){

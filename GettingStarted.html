@@ -11,22 +11,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!--Navbar with bootstrap, when changing window size movment is stuttery-->
     <nav class="navbar navbar-dark sticky-top navbar-expand-lg" id="navbar">
         <div class="container">
-            <!--Trying this navbar toggler with bootstrap, seems to work for now. Still need to understand ARIA attributes for accesibility, need to read more on them--> 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar_data">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <a class="logo" href="index.html">
-              <img src="Images/Icon.svg" alt="Image of Logo"> <!--Remove height with CSS eventually-->
+              <img src="Images/Icon.svg" alt="Image of Logo">
           </a>
 
-            <!--Think we can use same ID on different html pages?-->
             <div class="collapse navbar-collapse text-start" id="navbar_data">
                 <ul class="navbar-nav ms-auto">
-                    <!--Make sure active is right on each page-->
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">Home</a>
                     </li>
@@ -46,7 +42,7 @@
         <h5 class="heading_subtext">Don't worry, I brought pictures.</h5>
     </section>
 
-    <!--Bootstrap grid, I like the look but needs spacing and color change, photos don't stretch to edges-->
+
     <section id="grid">
         <div class="container text-center">
             <div class="row row-cols-4">

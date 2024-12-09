@@ -11,23 +11,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
- 
-    <!--Navbar with bootstrap, when changing window size movment is stuttery, try to fix-->
     <nav class="navbar navbar-dark sticky-top navbar-expand-lg" id="navbar">
         <div class="container">
-            <!--Trying this navbar toggler with bootstrap, seems to work for now. Still need to understand ARIA attributes for accesibility, need to read more on them--> 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar_data">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <a class="logo" href="index.html">
-              <img src="Images/Icon.svg" alt="Image of Logo"> <!--Remove height with CSS eventually-->
+              <img src="Images/Icon.svg" alt="Image of Logo">
           </a>
-
-             <!--Think we can use same ID on different html pages?-->
             <div class="collapse navbar-collapse" id="navbar_data">
                 <ul class="navbar-nav ms-auto">
-                    <!--Make sure active is right on each page-->
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">Home</a>
                     </li>
@@ -49,7 +43,6 @@
     </section>
 
     <section class="faq_section">
-        <!--Trying accordions since this is the look I wanted. Another area that could use ARIA attributes, messy but works. Try to change show color in CSS-->
         <div class="accordion accordion-flush" id="faq_accordion">
             <div class="accordion-item">
                   <h2 class="accordion-header">
